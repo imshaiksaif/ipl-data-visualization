@@ -1,0 +1,14 @@
+{
+  "name": "ipl-data-visual-saif",
+  "version": "1.0.0",
+  "description": "visualizing ipl data",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ipl-saif"
+  ],
+  "author": "saif",
+  "license": "ISC"
+}
