@@ -44,26 +44,33 @@ function findTotalNumberOfMatchesPerYear() {
 //Second Function : 2. Number of matches won of per team per year in IPL.
 
 function matchesWonPerTeamPerYear() {
-    let matchesWon = matchesJsonFile.reduce((accumulator, currentValue) => {
-        if(accumulator[currentValue.season]){
-            if(currentValue.winner in accumulator[currentValue.season]) {
-                accumulator[currentValue.season][currentValue.winner] += 1;
-            } else {
-                accumulator[currentValue.season][currentValue.winner] = 1;
-            } 
-
+    let matchesWon = matchesJsonFile.filter(match => match.winner).reduce((accumulator, currentValue) => {
+        if(accumulator[currentValue.winner]) {
+            let year = {};
+            matchesJsonFile.map(match => (year[match.season] = 0));
+            let countMatches = matchesJsonFile.filter(match => match.winner === currentValue.winner).reduce((accumulator, currentValue) => {
+                if(accumulator[currentValue.season]) {
+                    accumulator[currentValue.season]++;
+                } else {
+                    accumulator[currentValue.season] = 1;
+                }
+                return accumulator;
+                 
+            },{})
+            accumulator[currentValue.winner] = countMatches;
         } else {
-            accumulator[currentValue.season] = {};
-            accumulator[currentValue.season][currentValue.winner] = 1;
+            accumulator[currentValue.winner] = {};
         }
-
         return accumulator;
-    
-}, {});
+    }, {});
 
-    console.log(matchesWon);
-
+    let matchesWonObj = {"teams": Object.keys(matchesWon), "years": Object.values(matchesWon)};
+    return matchesWonObj;
 }
+
+
+
+
 
 
 
@@ -101,10 +108,11 @@ function totalRunsConcededPerTeam() {
 
 //function callings
 let findTotalMatchesFunction = findTotalNumberOfMatchesPerYear();
+let matchesWonPerTeamFunction = matchesWonPerTeamPerYear();
 let totalRunsFunction = totalRunsConcededPerTeam();
 
 // // Object of year and matches
-let fullObject = {findTotalMatchesFunction, totalRunsFunction};
+let fullObject = {findTotalMatchesFunction, matchesWonPerTeamFunction, totalRunsFunction};
 
 // writing output to json file in public folder
 (async () => {
