@@ -58,13 +58,14 @@ function matchesWonPerTeamPerYear() {
         }
 
         return accumulator;
-    }, {});
+    
+}, {});
 
-    // console.log(matchesWon);
+    console.log(matchesWon);
 
 }
 
-matchesWonPerTeamPerYear();
+
 
 
 // // third function : 3. Extra runs conceded per team in 2016
@@ -98,8 +99,7 @@ function totalRunsConcededPerTeam() {
 
 
 
-
-// console.log(findTotalNumberOfMatchesPerYear());
+//function callings
 let findTotalMatchesFunction = findTotalNumberOfMatchesPerYear();
 let totalRunsFunction = totalRunsConcededPerTeam();
 

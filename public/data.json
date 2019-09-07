@@ -1,5 +1,5 @@
 {
-	"totalNumOfMatches": {
+	"findTotalMatchesFunction": {
 		"year": [
 			"2008",
 			"2009",
@@ -23,6 +23,28 @@
 			59,
 			60,
 			59
+		]
+	},
+	"totalRunsFunction": {
+		"teams": [
+			"Rising Pune Supergiants",
+			"Mumbai Indians",
+			"Kolkata Knight Riders",
+			"Delhi Daredevils",
+			"Gujarat Lions",
+			"Kings XI Punjab",
+			"Sunrisers Hyderabad",
+			"Royal Challengers Bangalore"
+		],
+		"runs": [
+			108,
+			102,
+			122,
+			106,
+			98,
+			100,
+			107,
+			156
 		]
 	}
 }
