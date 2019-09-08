@@ -120,6 +120,35 @@ Highcharts.chart('no-of-matches', {
     ]
 });
 
+Highcharts.chart('totalRunsFunction', {
+    chart: {
+        inverted: false,
+        polar: false
+    },
+    title: {
+        text: 'Extra runs conceded per team in 2016'
+    },
+    subtitle: {
+        text: 'Extra Runs'
+    },
+    xAxis: {
+        categories: data.totalRunsFunction.teams
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Runs Conceded'
+        }
+    },
+    series: [{
+        type: 'column',
+        colorByPoint: true,
+        data: data.totalRunsFunction.runs,
+        showInLegend: false
+    }]
+});
+
+
 }
 
 fetchAndVisualizeData();
