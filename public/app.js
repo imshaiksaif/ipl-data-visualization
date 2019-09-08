@@ -149,6 +149,33 @@ Highcharts.chart('totalRunsFunction', {
 });
 
 
+Highcharts.chart('topEconomicalBowlersFunction', {
+    chart: {
+        inverted: false,
+        polar: false
+    },
+    title: {
+        text: 'Top 10 economical bowlers in 2015'
+    },
+    subtitle: {
+        text: 'Top 10 bowlers'
+    },
+    xAxis: {
+        categories: data.topEconomicalBowlersFunction.bowler
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Economy of bowlers'
+        }
+    },
+    series: [{
+        type: 'column',
+        colorByPoint: true,
+        data: data.topEconomicalBowlersFunction.economy,
+        showInLegend: false
+    }]
+});
 }
 
 fetchAndVisualizeData();
