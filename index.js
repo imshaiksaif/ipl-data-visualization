@@ -164,6 +164,8 @@ let topEconomicalBowlersFunction = topEconomicalBowlers();
 // // Object of year and matches
 let fullObject = {findTotalMatchesFunction, matchesWonPerTeamFunction, totalRunsFunction, topEconomicalBowlersFunction};
 
+
+
 // writing output to json file in public folder
 (async () => {
     await writeToJSONFile("./public/data.json", fullObject);
