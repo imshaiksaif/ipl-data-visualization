@@ -178,5 +178,31 @@
 			107,
 			156
 		]
+	},
+	"topEconomicalBowlersFunction": {
+		"bowler": [
+			"RN ten Doeschate",
+			"J Yadav",
+			"V Kohli",
+			"R Ashwin",
+			"S Nadeem",
+			"Parvez Rasool",
+			"MC Henriques",
+			"Z Khan",
+			"MA Starc",
+			"GB Hogg"
+		],
+		"economy": [
+			4,
+			4.142857142857143,
+			5.454545454545454,
+			5.846153846153846,
+			6.142857142857143,
+			6.2,
+			6.32,
+			6.455172413793103,
+			6.767441860465116,
+			6.857142857142857
+		]
 	}
 }
