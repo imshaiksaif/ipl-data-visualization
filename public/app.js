@@ -42,7 +42,7 @@ Highcharts.chart('no-of-matches', {
         text: 'Number of matches won'
     },
     xAxis: {
-        categories: data.matchesWonPerTeamFunction.years,
+        categories: Object.keys(data.matchesWonPerTeamFunction.years[0]),
         crosshair: true
     },
     yAxis: {

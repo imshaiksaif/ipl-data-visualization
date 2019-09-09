@@ -56,7 +56,7 @@ function matchesWonPerTeamPerYear() {
                 }
                 return accumulator;
                  
-            },{})
+            },year)
             accumulator[currentValue.winner] = countMatches;
         } else {
             accumulator[currentValue.winner] = {};
