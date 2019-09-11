@@ -39,7 +39,7 @@ function visualizeData(data) {
 			text: 'Number of matches won'
 		},
 		xAxis: {
-			categories: Object.keys(data.matchesWonPerTeamFunction.years[0]),
+			categories: data.matchesWonPerTeamFunction.years,
 			crosshair: true
 		},
 		yAxis: {
@@ -58,64 +58,8 @@ function visualizeData(data) {
 				stacking: 'percent'
 			}
 		},
-		series: [
-			{
-				name: data.matchesWonPerTeamFunction.teams[0],
-				data: Object.values(data.matchesWonPerTeamFunction.years[0])
-			},
-			{
-				name: data.matchesWonPerTeamFunction.teams[1],
-				data: Object.values(data.matchesWonPerTeamFunction.years[1])
-			},
-			{
-				name: data.matchesWonPerTeamFunction.teams[2],
-				data: Object.values(data.matchesWonPerTeamFunction.years[2])
-			},
-			{
-				name: data.matchesWonPerTeamFunction.teams[3],
-				data: Object.values(data.matchesWonPerTeamFunction.years[3])
-			},
-			{
-				name: data.matchesWonPerTeamFunction.teams[4],
-				data: Object.values(data.matchesWonPerTeamFunction.years[4])
-			},
-			{
-				name: data.matchesWonPerTeamFunction.teams[5],
-				data: Object.values(data.matchesWonPerTeamFunction.years[5])
-			},
-			{
-				name: data.matchesWonPerTeamFunction.teams[6],
-				data: Object.values(data.matchesWonPerTeamFunction.years[6])
-			},
-			{
-				name: data.matchesWonPerTeamFunction.teams[7],
-				data: Object.values(data.matchesWonPerTeamFunction.years[7])
-			},
-			{
-				name: data.matchesWonPerTeamFunction.teams[8],
-				data: Object.values(data.matchesWonPerTeamFunction.years[8])
-			},
-			{
-				name: data.matchesWonPerTeamFunction.teams[9],
-				data: Object.values(data.matchesWonPerTeamFunction.years[9])
-			},
-			{
-				name: data.matchesWonPerTeamFunction.teams[10],
-				data: Object.values(data.matchesWonPerTeamFunction.years[10])
-			},
-			{
-				name: data.matchesWonPerTeamFunction.teams[11],
-				data: Object.values(data.matchesWonPerTeamFunction.years[11])
-			},
-			{
-				name: data.matchesWonPerTeamFunction.teams[12],
-				data: Object.values(data.matchesWonPerTeamFunction.years[12])
-			},
-			{
-				name: data.matchesWonPerTeamFunction.teams[13],
-				data: Object.values(data.matchesWonPerTeamFunction.years[13])
-			}
-		]
+		series: data.matchesWonPerTeamFunction.teamdata
+	 
 	});
 
 	Highcharts.chart('totalRunsFunction', {

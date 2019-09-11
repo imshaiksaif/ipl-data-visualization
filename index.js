@@ -36,6 +36,7 @@ function findTotalNumberOfMatchesPerYear() {
 //Second Function : 2. Number of matches won of per team per year in IPL.
 
 function matchesWonPerTeamPerYear() {
+	var seriesdata={};
 	let matchesWon = matchesJsonFile.filter((match) => match.winner).reduce((accumulator, currentValue) => {
 		if (accumulator[currentValue.winner]) {
 			let year = {};
@@ -51,13 +52,15 @@ function matchesWonPerTeamPerYear() {
 					return accumulator;
 				}, year);
 			accumulator[currentValue.winner] = countMatches;
+			seriesdata[currentValue.winner]={'name':currentValue.winner,'data':Object.values(countMatches)};
+
 		} else {
 			accumulator[currentValue.winner] = {};
 		}
 		return accumulator;
 	}, {});
 
-	let matchesWonObj = { teams: Object.keys(matchesWon), years: Object.values(matchesWon) };
+	let matchesWonObj = { years: Object.keys(Object.values(matchesWon)[0]), teamdata: Object.values(seriesdata) };
 	return matchesWonObj;
 }
 
