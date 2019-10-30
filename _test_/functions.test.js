@@ -1,6 +1,6 @@
-const functions = require("../ipl/functions.js");
-const matchesOut = require("../jsObject/matchesOut.json");
-const deliveryOut = require("../jsObject/deliveryOut.json");
+const functions = require('../ipl/functions.js');
+const matchesOut = require('../jsObject/matchesOut.json');
+const deliveryOut = require('../jsObject/deliveryOut.json');
 const findTotalNumberOfMatchesPerYear = functions.findTotalNumberOfMatchesPerYear;
 const matchesWonPerTeamPerYear = functions.matchesWonPerTeamPerYear;
 const totalRunsConcededPerTeam = functions.totalRunsConcededPerTeam;
@@ -10,30 +10,8 @@ const topEconomicalBowlers = functions.topEconomicalBowlers;
 describe('Number of matches played per year for all the years in IPL', () => {
 	it('Number of matches played per year', () => {
 		let expectedOutput = {
-			"year": [
-				"2008",
-				"2009",
-				"2010",
-				"2011",
-				"2012",
-				"2013",
-				"2014",
-				"2015",
-				"2016",
-				"2017"
-			],
-			"matches": [
-				58,
-				57,
-				60,
-				73,
-				74,
-				76,
-				60,
-				59,
-				60,
-				59
-			]
+			year: [ '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017' ],
+			matches: [ 58, 57, 60, 73, 74, 76, 60, 59, 60, 59 ]
 		};
 
 		expect(findTotalNumberOfMatchesPerYear(matchesOut)).toEqual(expectedOutput);
@@ -41,30 +19,8 @@ describe('Number of matches played per year for all the years in IPL', () => {
 
 	it('Number of matches played per year not to be below output', () => {
 		let expectedOutput = {
-			"year": [
-				"2008",
-				"2009",
-				"2010",
-				"2011",
-				"2012",
-				"2013",
-				"2014",
-				"2015",
-				"2016",
-				"2017"
-			],
-			"matches": [
-				58,
-				57,
-				60,
-				73,
-				74,
-				76,
-				60,
-				59,
-				60,
-				59
-			]
+			year: [ '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017' ],
+			matches: [ 58, 57, 60, 73, 74, 76, 60, 59, 60, 59 ]
 		};
 
 		expect(findTotalNumberOfMatchesPerYear(matchesOut)).not.toBe(expectedOutput);
@@ -76,228 +32,63 @@ describe('Number of matches played per year for all the years in IPL', () => {
 describe('Number of matches won of per team per year in IPL', () => {
 	it('Number of matches won per team per year to be', () => {
 		let expectedOutput = {
-			"years": [
-				"2008",
-				"2009",
-				"2010",
-				"2011",
-				"2012",
-				"2013",
-				"2014",
-				"2015",
-				"2016",
-				"2017"
-			],
-			"teamdata": [
+			years: [ '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017' ],
+			teamdata: [
 				{
-					"name": "Sunrisers Hyderabad",
-					"data": [
-						0,
-						0,
-						0,
-						0,
-						0,
-						10,
-						6,
-						7,
-						11,
-						8
-					]
+					name: 'Sunrisers Hyderabad',
+					data: [ 0, 0, 0, 0, 0, 10, 6, 7, 11, 8 ]
 				},
 				{
-					"name": "Kings XI Punjab",
-					"data": [
-						10,
-						7,
-						4,
-						7,
-						8,
-						8,
-						12,
-						3,
-						4,
-						7
-					]
+					name: 'Kings XI Punjab',
+					data: [ 10, 7, 4, 7, 8, 8, 12, 3, 4, 7 ]
 				},
 				{
-					"name": "Mumbai Indians",
-					"data": [
-						7,
-						5,
-						11,
-						10,
-						10,
-						13,
-						7,
-						10,
-						7,
-						12
-					]
+					name: 'Mumbai Indians',
+					data: [ 7, 5, 11, 10, 10, 13, 7, 10, 7, 12 ]
 				},
 				{
-					"name": "Kolkata Knight Riders",
-					"data": [
-						6,
-						3,
-						7,
-						8,
-						12,
-						6,
-						11,
-						7,
-						8,
-						9
-					]
+					name: 'Kolkata Knight Riders',
+					data: [ 6, 3, 7, 8, 12, 6, 11, 7, 8, 9 ]
 				},
 				{
-					"name": "Delhi Daredevils",
-					"data": [
-						7,
-						10,
-						7,
-						4,
-						11,
-						3,
-						2,
-						5,
-						7,
-						6
-					]
+					name: 'Delhi Daredevils',
+					data: [ 7, 10, 7, 4, 11, 3, 2, 5, 7, 6 ]
 				},
 				{
-					"name": "Rising Pune Supergiant",
-					"data": [
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						10
-					]
+					name: 'Rising Pune Supergiant',
+					data: [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 10 ]
 				},
 				{
-					"name": "Royal Challengers Bangalore",
-					"data": [
-						4,
-						9,
-						8,
-						10,
-						8,
-						9,
-						5,
-						8,
-						9,
-						3
-					]
+					name: 'Royal Challengers Bangalore',
+					data: [ 4, 9, 8, 10, 8, 9, 5, 8, 9, 3 ]
 				},
 				{
-					"name": "Gujarat Lions",
-					"data": [
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						9,
-						4
-					]
+					name: 'Gujarat Lions',
+					data: [ 0, 0, 0, 0, 0, 0, 0, 0, 9, 4 ]
 				},
 				{
-					"name": "Chennai Super Kings",
-					"data": [
-						9,
-						8,
-						9,
-						11,
-						10,
-						12,
-						10,
-						10,
-						0,
-						0
-					]
+					name: 'Chennai Super Kings',
+					data: [ 9, 8, 9, 11, 10, 12, 10, 10, 0, 0 ]
 				},
 				{
-					"name": "Rajasthan Royals",
-					"data": [
-						13,
-						6,
-						6,
-						6,
-						7,
-						11,
-						7,
-						7,
-						0,
-						0
-					]
+					name: 'Rajasthan Royals',
+					data: [ 13, 6, 6, 6, 7, 11, 7, 7, 0, 0 ]
 				},
 				{
-					"name": "Deccan Chargers",
-					"data": [
-						2,
-						9,
-						8,
-						6,
-						4,
-						0,
-						0,
-						0,
-						0,
-						0
-					]
+					name: 'Deccan Chargers',
+					data: [ 2, 9, 8, 6, 4, 0, 0, 0, 0, 0 ]
 				},
 				{
-					"name": "Pune Warriors",
-					"data": [
-						0,
-						0,
-						0,
-						4,
-						4,
-						4,
-						0,
-						0,
-						0,
-						0
-					]
+					name: 'Pune Warriors',
+					data: [ 0, 0, 0, 4, 4, 4, 0, 0, 0, 0 ]
 				},
 				{
-					"name": "Kochi Tuskers Kerala",
-					"data": [
-						0,
-						0,
-						0,
-						6,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0
-					]
+					name: 'Kochi Tuskers Kerala',
+					data: [ 0, 0, 0, 6, 0, 0, 0, 0, 0, 0 ]
 				},
 				{
-					"name": "Rising Pune Supergiants",
-					"data": [
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						0,
-						5,
-						0
-					]
+					name: 'Rising Pune Supergiants',
+					data: [ 0, 0, 0, 0, 0, 0, 0, 0, 5, 0 ]
 				}
 			]
 		};
@@ -307,18 +98,7 @@ describe('Number of matches won of per team per year in IPL', () => {
 
 	it('Number of matches won per team per year not to be', () => {
 		let expectedOutput = {
-			"years": [
-				"2008",
-				"2009",
-				"2010",
-				"2011",
-				"2012",
-				"2013",
-				"2014",
-				"2015",
-				"2016",
-				"2017"
-			]
+			years: [ '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017' ]
 		};
 
 		expect(matchesWonPerTeamPerYear(matchesOut)).not.toEqual(expectedOutput);

@@ -59,7 +59,6 @@ function visualizeData(data) {
 			}
 		},
 		series: data.matchesWonPerTeamFunction.teamdata
-	 
 	});
 
 	Highcharts.chart('totalRunsFunction', {
